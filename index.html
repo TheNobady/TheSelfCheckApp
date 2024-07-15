@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Health Tracker</h1>
+        
+        <div class="input-section">
+            <div class="section">
+                <h2>Diet</h2>
+                <input type="text" id="dietInput" placeholder="What did you eat today?">
+                <button onclick="addEntry('diet')">Add</button>
+                <ul id="dietList"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Sleep</h2>
+                <input type="number" id="sleepInput" placeholder="How many hours did you sleep?">
+                <button onclick="addEntry('sleep')">Add</button>
+                <ul id="sleepList"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Physical Health</h2>
+                <input type="text" id="physicalHealthInput" placeholder="Describe your physical health today">
+                <button onclick="addEntry('physicalHealth')">Add</button>
+                <ul id="physicalHealthList"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Mental Health</h2>
+                <input type="text" id="mentalHealthInput" placeholder="Describe your mental health today">
+                <button onclick="addEntry('mentalHealth')">Add</button>
+                <ul id="mentalHealthList"></ul>
+            </div>
+        </div>
+
+        <button onclick="generateReport()">Generate Report</button>
+
+        <div class="report" id="reportSection">
+            <h2>Health Report</h2>
+            <p id="dietReport"></p>
+            <p id="sleepReport"></p>
+            <p id="physicalHealthReport"></p>
+            <p id="mentalHealthReport"></p>
+            <h3>Recommendations</h3>
+            <ul id="recommendationsList"></ul>
+        </div>
+        
+        <div id='calendar'></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
